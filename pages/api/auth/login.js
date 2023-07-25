@@ -8,10 +8,11 @@ export default function loginHandler(req, res) {
       {
         exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30, // 30 days
         email: "admin@local.local",
-        password: "anibal",
+        password: "admin",
       },
       "secret"
     );
+
     const serialized = serialize("myTokenName", token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
